@@ -1,12 +1,13 @@
 name: Run Tests and Upload Artifact
 
 on: 
+  schedule:
+    - cron: '20 11 * * *'  # Ejecuta a las 15:00 UTC o 17:00 UTC+2 para España
+    - cron: '30 10 * * *'  # Ejecuta a las 23:00 UTC o 17:00 UTC+2 para España
   push: {}
   pull_request: {}
   workflow_dispatch: {}
-  schedule:
-    - cron: '20 11 * * *'  # Ejecuta a las 15:00 UTC o 17:00 UTC+2 para España
-    - cron: '24 10 * * *'  # Ejecuta a las 23:00 UTC o 17:00 UTC+2 para España
+  
 
 jobs:
   test:
